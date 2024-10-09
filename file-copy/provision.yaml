@@ -68,3 +68,7 @@
         state: restarted
         enabled: yes
       when: ansible_distribution == "Ubuntu"
+    - name: Create a directory
+      file:
+        path: /opt/test21
+        state: directory
