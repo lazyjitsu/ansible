@@ -1,0 +1,3 @@
+-tasks:
+  name: Check server connections
+    - action: ping
