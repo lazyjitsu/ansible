@@ -45,13 +45,13 @@
         dest: /etc/motd
     - name: Deploy ntp agent conf on Ubuntu
       template:
-        src: ../templates/ntp.conf.ubuntu
+        src: ./templates/ntp.conf.ubuntu
         dest: /etc/ntp.conf
         backup: yes
       when: ansible_distribution == "Ubuntu"
     - name: Deploy ntp agent conf on centOS
       template:
-        src: ../templates/ntp.conf.centos
+        src: ./templates/ntp.conf.centos
         dest: /etc/chrony.conf
         backup: yes
       when: ansible_distribution == "CentOS"
