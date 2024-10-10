@@ -1,13 +1,13 @@
-    - name: reStart Service Cent OS
-      service:
-        name: chronyd
-        state: restarted
-        enabled: yes
-      when: ansible_distribution == "CentOS"
-    - name: reStart Service Ubuntu
-      service:
-        name: ntp
-        state: restarted
-        enabled: yes
-      when: ansible_distribution == "Ubuntu"
+- name: reStart Service Cent OS
+  service:
+    name: chronyd
+    state: restarted
+    enabled: yes
+  when: ansible_distribution == "CentOS"
+- name: reStart Service Ubuntu
+  service:
+    name: ntp
+    state: restarted
+    enabled: yes
+  when: ansible_distribution == "Ubuntu"
 
