@@ -2,6 +2,7 @@
 - name: Provisioning servers
   hosts: all
   become: yes
+  mydir: /opt/studio54
   tasks:
     - name: Install ntp agent on CentOS
       yum:
