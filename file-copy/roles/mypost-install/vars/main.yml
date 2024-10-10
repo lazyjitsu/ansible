@@ -1,12 +1,6 @@
-- name: reStart Service Cent OS
-  service:
-    name: chronyd
-    state: restarted
-    enabled: yes
-  when: ansible_distribution == "CentOS"
-- name: reStart Service Ubuntu
-  service:
-    name: ntp
-    state: restarted
-    enabled: yes
-  when: ansible_distribution == "Ubuntu"
+USRNM: commonuser
+COMM: variable from groupvars_all file
+ntp0: 0.north-america.pool.ntp.org
+ntp1: 1.north-america.pool.ntp.org
+ntp2: 2.north-america.pool.ntp.org
+ntp3: 3.north-america.pool.ntp.org

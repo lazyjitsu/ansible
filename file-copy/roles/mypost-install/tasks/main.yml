@@ -45,7 +45,7 @@
     state: directory
 - name: Deploy ntp agent conf on Ubuntu
   template:
-    src: ntp.conf.ubuntu
+    src: ntp.conf.ubuntu.j2
     dest: /etc/ntp.conf
     backup: yes
   when: ansible_distribution == "Ubuntu"
@@ -53,9 +53,13 @@
     - Deploy ntp agent conf on Ubuntu 
 - name: Deploy ntp agent conf on centOS
   template:
-    src: ntp.conf.centos
+    src: ntp.conf.centos.j2
     dest: /etc/chrony.conf
     backup: yes
   when: ansible_distribution == "CentOS"
   notify:
     - reStart Service Cent OS
+- name: Dump file
+  copy:
+    src: sem.txt
+    dest: /tmp/sem.txt
